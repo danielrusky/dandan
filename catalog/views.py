@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from catalog.models import Product, Category
 
@@ -10,6 +10,13 @@ def index(requests):
         'title': 'Главная'
     }
     return render(requests, 'catalog/index.html', context)
+
+
+def matplot(requests):
+    context = {
+        'title': 'График'
+    }
+    return render(requests, 'catalog/matplot.html', context)
 
 
 def contact(requests):
