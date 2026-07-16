@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
+from catalog.models import Product
+
 
 def index(requests):
+    product_list = Product.objects.all()
     context = {
+        'object_list': product_list,
         'title': 'Главная'
     }
     return render(requests, 'catalog/index.html', context)
