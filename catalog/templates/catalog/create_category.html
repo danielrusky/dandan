@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Создать категорию</h4>
+        </div>
+        <div class="card-body">
+            <form method="post" action="" class="form-floating">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="category_name">Название категории</label>
+                    <input type="text" name="cat_name" class="form-control" id="category_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="category_description">Описание категории</label>
+                    <textarea class="form-control" aria-label="With textarea" id="category_description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image">Изображение</label>
+                    <textarea class="form-control" aria-label="With textarea" id="image" required></textarea>
+                </div>
+                <input class="btn btn-primary w-100" type="submit" value="Отправить"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
